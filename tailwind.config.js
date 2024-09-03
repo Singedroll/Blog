@@ -15,5 +15,5 @@ module.exports = {
       fontSize: { sm1: ["12px", "25px"] },
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 };
