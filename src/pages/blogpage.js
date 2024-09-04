@@ -3,8 +3,8 @@ import BlogNav from "../components/BlogNav";
 import BlogHeader from "@/components/BlogHeader";
 import { BlogCard } from "@/components/BlogCard";
 import { BlogHero } from "@/components/BlogHero";
-import { Trending } from "../components/BlogHero";
 import { BlogHeroSlider } from "../components/BlogHeroSlider";
+import { BlogTrending } from "../components/BlogTrending";
 
 const url = "https://dev.to/api/articles";
 
@@ -33,6 +33,7 @@ const BlogPage = () => {
         date={data[0].published_at}
       />
       <BlogHeader />
+      <BlogTrending />
       <div className="grid-rows-5 grid grid-cols-3">
         {data.map((blog) => {
           return (

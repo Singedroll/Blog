@@ -1,27 +1,36 @@
-export const Trending = () => {
-  const { data } = useSWR(url, fetcher);
+import useSWR from "swr";
+import { BlogTrendingCard } from "@/components/BlogTrendingCard";
+
+const url = "https://dev.to/api/articles?state=rising";
+
+const fetcher = (...args) => fetch(...args).then((res) => res.json());
+
+export const BlogTrending = () => {
+  const { data, error, isLoading } = useSWR(url, fetcher);
+
+  if (isLoading) {
+    return <p>...loading</p>;
+  }
+
+  if (error) {
+    return <p>...oh sorry error</p>;
+  }
+
+  console.log(data);
+
   return (
-    <div>
-      {data.map(() => (
-        <div>
-          <div className="carousel w-full">
-            <div id="slide1" className="carousel-item relative w-full">
-              <img
-                src="https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.webp"
-                className="w-full"
-              />
-              <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-                <a href="#slide4" className="btn btn-circle">
-                  ❮
-                </a>
-                <a href="#slide2" className="btn btn-circle">
-                  ❯
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      ))}
+    <div className="flex flex-col gap-[30px]">
+      <p className="w-[184px] text-sm2 font-bold"> Trending</p>
+      <div className="grid grid-cols-4 gap-4">
+        {data.slice(0, 4).map((trending) => (
+          <BlogTrendingCard
+            key={trending.id}
+            image={trending.cover_image}
+            title={trending.title}
+            date={trending.published_at}
+          />
+        ))}
+      </div>
     </div>
   );
 };

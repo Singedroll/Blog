@@ -12,7 +12,7 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-      fontSize: { sm1: ["12px", "25px"] },
+      fontSize: { sm1: ["12px", "25px"], sm2: ["24px", "28px"] },
     },
   },
   plugins: [require("daisyui")],

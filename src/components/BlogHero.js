@@ -9,10 +9,21 @@ export const BlogHero = (props) => {
   const { image, title, date } = props;
   return (
     <div className="">
-      <div className="border border-solid rounded ">
-        <img width={1216} src={image} alt={title} />
-        <h2>{title}</h2>
-        <p>{moment(date).format("ll")}</p>
+      <div
+        style={{ backgroundImage: `url(${image})` }}
+        className="border border-solid rounded h-[600px] bg-cover bg-center flex items-end p-2"
+      >
+        <div className="flex border h-fit  p-10  w-[598px] bg-white  flex-col gap-6 rounded-xl">
+          <div className="flex flex-col gap-2">
+            <div>
+              <div className="btn btn-sm btn-active btn-primary">
+                Technology
+              </div>
+            </div>
+            <h2 className="font-semibold text-4xl">{title}</h2>
+          </div>
+          <p>{moment(date).format("ll")}</p>
+        </div>
       </div>
       <div className="flex justify-end mt-5">
         <div className="flex gap-2">
