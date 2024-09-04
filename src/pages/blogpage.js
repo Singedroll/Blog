@@ -3,8 +3,8 @@ import BlogNav from "../components/BlogNav";
 import BlogHeader from "@/components/BlogHeader";
 import { BlogCard } from "@/components/BlogCard";
 import { BlogHero } from "@/components/BlogHero";
-import { BlogHeroSlider } from "../components/BlogHeroSlider";
 import { BlogTrending } from "../components/BlogTrending";
+import { BlogFooter } from "../components/BlogFooter";
 
 const url = "https://dev.to/api/articles";
 
@@ -46,10 +46,7 @@ const BlogPage = () => {
           );
         })}
       </div>
-      <div>
-        {/* All blog content */}
-        <div className="flex flex-col"></div>
-      </div>
+      <BlogFooter />
     </div>
   );
 };

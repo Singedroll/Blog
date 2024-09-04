@@ -7,12 +7,19 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        "custom-blue": "#4b6bfb",
       },
-      fontSize: { sm1: ["12px", "25px"], sm2: ["24px", "28px"] },
+      backgroundColor: {
+        "custom-blue-light": "rgba(75, 107, 251, 0.05)", // Adjust the RGBA value to match the desired opacity
+      },
+      fontSize: {
+        sm1: ["12px", "25px"],
+        sm2: ["24px", "28px"],
+      },
+      fontFamily: {
+        "work-sans": ["Work Sans", "sans-serif"],
+      },
     },
   },
   plugins: [require("daisyui")],

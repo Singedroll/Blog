@@ -22,7 +22,7 @@ export const BlogHero = (props) => {
             </div>
             <h2 className="font-semibold text-4xl">{title}</h2>
           </div>
-          <p>{moment(date).format("ll")}</p>
+          <p className="text-[#97989f]">{moment(date).format("ll")}</p>
         </div>
       </div>
       <div className="flex justify-end mt-5">
