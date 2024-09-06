@@ -5,6 +5,7 @@ import { BlogCard } from "@/components/BlogCard";
 import { BlogHero } from "@/components/BlogHero";
 import { BlogTrending } from "../components/BlogTrending";
 import { BlogFooter } from "../components/BlogFooter";
+import Link from "next/link";
 
 const url = "https://dev.to/api/articles";
 
@@ -37,12 +38,14 @@ const BlogPage = () => {
       <div className="grid-rows-5 grid grid-cols-3">
         {data.map((blog) => {
           return (
-            <BlogCard
-              key={blog.id}
-              image={blog.cover_image}
-              title={blog.title}
-              date={blog.published_at}
-            />
+            <Link href={`blog/${blog.id}`}>
+              <BlogCard
+                key={blog.id}
+                image={blog.cover_image}
+                title={blog.title}
+                date={blog.published_at}
+              />
+            </Link>
           );
         })}
       </div>
