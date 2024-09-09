@@ -1,6 +1,5 @@
 import { useState } from "react";
 import useSWR from "swr";
-import BlogNav from "../components/BlogNav";
 import { BlogCard } from "@/components/BlogCard";
 import BlogHeader from "../components/BlogHeader2";
 import Link from "next/link";

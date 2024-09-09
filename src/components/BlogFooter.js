@@ -3,6 +3,7 @@ import { TweeterIcon } from "../components/icons/TweeterIcon";
 import { InstagramIcon } from "../components/icons/InstagramIcon";
 import { LnIcon } from "./icons/LnIcon";
 import { BlogIcon } from "./icons/BlogIcon";
+import Link from "next/link";
 
 export const BlogFooter = () => {
   return (
@@ -31,15 +32,9 @@ export const BlogFooter = () => {
             </div>
           </div>
           <div className="flex flex-col gap-2 items-center w-[521px]">
-            <p className="font-work-sans font-normal text-base text-[#3b3c4a]">
-              Home
-            </p>
-            <p className="font-work-sans font-normal text-base text-[#3b3c4a]">
-              Blog
-            </p>
-            <p className="font-work-sans font-normal text-base text-[#3b3c4a]">
-              Contact
-            </p>
+            <Link href="/">Home</Link>
+            <Link href={"/blogpage"}>Blog</Link>
+            <Link href={"/contactus"}>Contact</Link>
           </div>
           <div className="flex w-36 justify-between h-4">
             <FacebookIcon />
@@ -52,10 +47,15 @@ export const BlogFooter = () => {
           <div className="flex justify-center items-center">
             <div className="flex gap-[10px] items-center">
               <BlogIcon />
-              <p className="flex flex-col">
+              <p>
                 Meta<span className="font-bold">Blog</span>
-                <span>© All Rights Reserved.</span>
+                <p>© All Rights Reserved.</p>
               </p>
+            </div>
+            <div className="flex justify-end w-[929px] gap-4">
+              <span>Terms of Use</span>
+              <span>Privacy Policy</span>
+              <span>Cookie Policy</span>
             </div>
           </div>
         </div>
