@@ -1,11 +1,9 @@
 import { useState } from "react";
 import useSWR from "swr";
-import BlogNav from "../components/BlogNav";
 import BlogHeader from "@/components/BlogHeader";
 import { BlogCard } from "@/components/BlogCard";
 import { BlogHero } from "@/components/BlogHero";
 import { BlogTrending } from "../components/BlogTrending";
-import { BlogFooter } from "../components/BlogFooter";
 import Link from "next/link";
 
 const url = "https://dev.to/api/articles";
@@ -14,8 +12,8 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 const Home = () => {
   const { data, error, isLoading } = useSWR(url, fetcher);
-  const [visibleBlogs, setVisibleBlogs] = useState(6); // Initial number of visible blogs
-  const [selectedTag, setSelectedTag] = useState(null); // State for the selected tag
+  const [visibleBlogs, setVisibleBlogs] = useState(6);
+  const [selectedTag, setSelectedTag] = useState(null);
 
   if (isLoading) {
     return <p>...loading</p>;
@@ -26,17 +24,15 @@ const Home = () => {
   }
 
   const loadMoreBlogs = () => {
-    setVisibleBlogs((prevVisibleBlogs) => prevVisibleBlogs + 3); // Add 3 more blogs
+    setVisibleBlogs((prevVisibleBlogs) => prevVisibleBlogs + 3);
   };
 
   if (!data) {
-    return null; // Or a fallback UI
+    return null;
   }
 
-  // Extract unique tags from the blog data
   const tags = [...new Set(data.flatMap((blog) => blog.tags))];
 
-  // Filter blogs based on selected tag
   const filteredBlogs = selectedTag
     ? data.filter((blog) => blog.tags.includes(selectedTag))
     : data;
@@ -67,7 +63,7 @@ const Home = () => {
           <div className="flex justify-center mt-4 mb-24">
             <button
               onClick={loadMoreBlogs}
-              className="btn btn-primary bg-custom-blue-light text-white px-4 py-2 rounded-lg"
+              className="h-12 px-5 py-3 rounded-md border border-[#696a75]/30 justify-center items-center gap-3 inline-flex"
             >
               Load More
             </button>

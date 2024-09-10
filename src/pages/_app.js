@@ -1,6 +1,4 @@
 import "@/styles/globals.css";
-import "@/components/BlogNav";
-import "@/components/BlogFooter";
 import BlogNav from "@/components/BlogNav";
 import { BlogFooter } from "@/components/BlogFooter";
 

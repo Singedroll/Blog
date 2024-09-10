@@ -37,22 +37,49 @@ export const BlogFooter = () => {
             <Link href={"/contactus"}>Contact</Link>
           </div>
           <div className="flex w-36 justify-between h-4">
-            <FacebookIcon />
-            <TweeterIcon />
-            <InstagramIcon />
-            <LnIcon />
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FacebookIcon />
+            </a>
+            <a
+              href="https://x.com/?lang=en "
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <TweeterIcon />
+            </a>
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <InstagramIcon />
+            </a>
+            <a
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <LnIcon />
+            </a>
           </div>
         </div>
         <div className="flex w-full py-8 px-0 border-t">
-          <div className="flex justify-center items-center">
-            <div className="flex gap-[10px] items-center">
+          <div className="flex items-center justify-between w-full max-w-[929px] mx-auto">
+            <div className="flex items-center gap-[10px]">
               <BlogIcon />
-              <p>
-                Meta<span className="font-bold">Blog</span>
-                <p>© All Rights Reserved.</p>
-              </p>
+              <div className="flex flex-col">
+                <div>
+                  Meta<span className="font-bold">Blog</span>
+                </div>
+                <div className="text-sm">© All Rights Reserved.</div>
+              </div>
             </div>
-            <div className="flex justify-end w-[929px] gap-4">
+
+            <div className="flex gap-4">
               <span>Terms of Use</span>
               <span>Privacy Policy</span>
               <span>Cookie Policy</span>

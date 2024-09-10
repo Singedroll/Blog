@@ -19,7 +19,7 @@ const BlogHeader = ({ tags, onTagClick }) => {
       <div className="flex gap-[30px] flex-wrap">
         <div className="flex gap-5 text-sm font-bold text-[#181A2A] flex-wrap">
           <button
-            onClick={() => onTagClick(null)} // Show all blogs when "All" is clicked
+            onClick={() => onTagClick(null)}
             className="text-custom-blue-light hover:underline"
           >
             All
@@ -27,18 +27,16 @@ const BlogHeader = ({ tags, onTagClick }) => {
           {displayedTags.map((tag, index) => (
             <button
               key={index}
-              onClick={() => onTagClick(tag)} // Filter blogs by the clicked tag
+              onClick={() => onTagClick(tag)}
               className="text-custom-blue-light hover:underline"
             >
               {tag}
             </button>
           ))}
         </div>
-      </div>
-      <div className="text-right text-sm font-bold text-[#181A2A] mt-2">
         <button
           onClick={toggleShowAll}
-          className="text-custom-blue-light hover:underline"
+          className="text-custom-blue-light hover:underline ml-auto text-sm font-bold mt-2"
         >
           {showAll ? "Show Less" : "View All"}
         </button>

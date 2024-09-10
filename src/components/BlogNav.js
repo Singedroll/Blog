@@ -5,7 +5,9 @@ const BlogNav = () => {
   return (
     <div className="max-w-[1216px] mx-auto mb-12">
       <div className="flex gap-[118px] py-8 pl-11">
-        <img src="./MetaBlogIcon.png" />
+        <Link href="/">
+          <img src="./MetaBlogIcon.png" />
+        </Link>
         <div className="flex gap-[21px] justify-center items-center">
           <div className="flex w-[667px] h-[24px] gap-[21px] items-center justify-between">
             <div className="flex gap-10 items-center justify-center w-[667px]">
