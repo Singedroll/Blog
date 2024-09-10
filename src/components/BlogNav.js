@@ -15,8 +15,11 @@ const BlogNav = () => {
               <Link href={"/blogpage"}>Blog</Link>
               <Link href={"/contactus"}>Contact</Link>
             </div>
-            <div className="flex justify-center items-center gap-3 pl-4 bg-#52525B border border-none w-[166px]">
-              <input className="w-[114px] h-5" placeholder="Search" />
+            <div className="h-9 justify-start items-center gap-10 inline-flex bg-[#f4f4f5] pl-4 pr-2 py-2 rounded-[5px]">
+              <input
+                className="w-[114px] h-5  text-zinc-600 bg-[#f4f4f5] text-sm font-normal font-['Inter'] leading-tight"
+                placeholder="Search "
+              />
               <SearchIcon />
             </div>
           </div>

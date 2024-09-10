@@ -47,7 +47,7 @@ const BlogPage = () => {
           <div className="flex justify-center mt-4 mb-24">
             <button
               onClick={loadMoreBlogs}
-              className="btn btn-primary bg-custom-blue-light text-white px-4 py-2 rounded-lg"
+              className="h-12 px-5 py-3 rounded-md border border-[#696a75]/30 justify-center items-center gap-3 inline-flex"
             >
               Load More
             </button>
