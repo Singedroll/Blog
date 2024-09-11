@@ -5,7 +5,9 @@ import { BlogCard } from "@/components/BlogCard";
 import { BlogHero } from "@/components/BlogHero";
 import { BlogTrending } from "../components/BlogTrending";
 import Link from "next/link";
-
+import { useContext } from "react";
+import TestComponent from "../components/TestComponent";
+import { ThemeContext } from "@/context/ThemeContext";
 const url = "https://dev.to/api/articles";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
@@ -14,7 +16,8 @@ const Home = () => {
   const { data, error, isLoading } = useSWR(url, fetcher);
   const [visibleBlogs, setVisibleBlogs] = useState(6);
   const [selectedTag, setSelectedTag] = useState(null);
-
+  const theme = useContext(ThemeContext);
+  console.log(theme);
   if (isLoading) {
     return <p>...loading</p>;
   }
@@ -39,7 +42,9 @@ const Home = () => {
 
   return (
     <div>
-      <div className="flex flex-col max-w-[1216px] mx-auto gap-24 mt-[100px]">
+      <TestComponent />
+
+      <div className=" flex flex-col max-w-[1216px] mx-auto gap-24 mt-[100px]">
         <BlogHero
           key={data[0].id}
           image={data[0].cover_image}
