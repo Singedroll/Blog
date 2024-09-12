@@ -1,10 +1,10 @@
 import Link from "next/link";
 import SearchIcon from "./icons/SearchIcon";
-import ThemeToggle from "../context/ThemeToggle"; // Import the ThemeToggle button
+import ThemeToggle from "../context/ThemeToggle";
 
 const BlogNav = () => {
   return (
-    <div className="max-w-[1216px] mx-auto mb-12">
+    <div className="dark:bg-slate-900 flex flex-col items-center mx-auto mb-12">
       <div className="flex gap-[118px] py-8 pl-11">
         <Link href="/">
           <img src="./MetaBlogIcon.png" />
@@ -24,7 +24,6 @@ const BlogNav = () => {
               <SearchIcon />
             </div>
           </div>
-          {/* Add the ThemeToggle button here */}
           <div className="ml-4">
             <ThemeToggle />
           </div>

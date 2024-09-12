@@ -4,29 +4,29 @@ import { BlogCard } from "@/components/BlogCard";
 import BlogHeader from "../components/BlogHeader2";
 import Link from "next/link";
 
-const url = "https://dev.to/api/articles";
+// const url = "https://dev.to/api/articles";
 
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
+// const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
-const BlogPage = () => {
-  const { data, error, isLoading } = useSWR(url, fetcher);
+const BlogPage = (props) => {
+  // const { data, error, isLoading } = useSWR(url, fetcher);
   const [visibleBlogs, setVisibleBlogs] = useState(6);
+  const { data } = props;
+  // if (isLoading) {
+  //   return <p>...loading</p>;
+  // }
 
-  if (isLoading) {
-    return <p>...loading</p>;
-  }
-
-  if (error) {
-    return <p>...oh sorry error</p>;
-  }
+  // if (error) {
+  //   return <p>...oh sorry error</p>;
+  // }
 
   const loadMoreBlogs = () => {
     setVisibleBlogs((prevVisibleBlogs) => prevVisibleBlogs + 3);
   };
 
-  if (!data) {
-    return null;
-  }
+  // if (!data) {
+  //   return null;
+  // }
 
   return (
     <div className="flex max-w-[1216px] mx-auto ">
@@ -59,3 +59,19 @@ const BlogPage = () => {
 };
 
 export default BlogPage;
+
+export const getServerSideProps = async () => {
+  try {
+    const res = await fetch("https://dev.to/api/articles");
+    const blogs = await res.json();
+    return {
+      props: {
+        data: blogs,
+      },
+    };
+  } catch (error) {
+    return {
+      notFound: true,
+    };
+  }
+};
