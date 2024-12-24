@@ -26,8 +26,12 @@ const Page = () => {
   return (
     <div className="mx-auto w-[655px] flex flex-col gap-10 justify-center mb-24">
       <div className="text-2xl">{blogDetail.title}</div>
-      <img src={blogDetail.cover_image} alt={blogDetail.title} />
-      <div className="prose">
+      <img
+        src={blogDetail.cover_image}
+        alt={blogDetail.title}
+        className="rounded-md dark:opacity-80"
+      />
+      <div className="prose dark:prose-invert">
         <ReactMarkdown rehypePlugins={[rehypeHighlight]}>
           {cleanMarkdown}
         </ReactMarkdown>

@@ -4,16 +4,12 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600&display=swap");
 
-/* globals.css */
-
-/* Light theme styles */
 body {
   background-color: #ffffff;
   color: #000000;
 }
 
-/* Dark theme styles */
-.dark body {
+body.dark {
   background-color: #000000;
   color: #ffffff;
 }

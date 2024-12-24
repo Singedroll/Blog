@@ -16,7 +16,6 @@ const App = () => {
       clearInterval(interval);
     }
 
-    // Cleanup interval on unmount or when isActive changes
     return () => clearInterval(interval);
   }, [isActive]);
 
